@@ -1046,30 +1046,17 @@ class Audio {
       return;
     }
     Audio.ctx.resume();
-  }
-}
+  };
+
+  toggleVolume() {
+    // Assuming vm.volume exists and controls the game's volume
+    // Toggle between 0 (off) and 1 (on) or any desired volume level
+    vm.volume = vm.volume === 0 ? 1 : 0;
+    console.log(`Volume toggled. New volume: ${vm.volume}`);
+};
+};
 
 Audio.ctx = new AudioContext();
-
-// Assuming there's a function or a way to set volume in binjgb.js or script.js
-// Initialize volume state
-let isVolumeOn = false;
-
-// Function to toggle volume state
-function toggleVolume() {
-  isVolumeOn = !isVolumeOn;
-  setGameVolume(isVolumeOn ? 1 : 0); // Placeholder function to set volume
-}
-
-// Event listener for the volume button
-document.getElementById('controller_volume').addEventListener('click', toggleVolume);
-
-// Placeholder function to demonstrate setting game volume
-// You need to replace this with actual game volume control logic
-function setGameVolume(volumeLevel) {
-  console.log(`Volume set to ${volumeLevel}`);
-  // Implement volume control here. This might involve adjusting the game's audio context or elements.
-}
 
 class Video {
   constructor(module, e, el) {
