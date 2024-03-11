@@ -9,7 +9,7 @@
 // User configurable.
 const ROM_FILENAME = "rom/game.gb";
 const ENABLE_REWIND = true;
-const ENABLE_PAUSE = false;
+const ENABLE_PAUSE = true;
 const ENABLE_SWITCH_PALETTES = true;
 const OSGP_DEADZONE = 0.1; // On screen gamepad deadzone range
 const CGB_COLOR_CURVE = 2; // 0: none, 1: Sameboy "Emulate Hardware" 2: Gambatte/Gameboy Online
@@ -1050,6 +1050,26 @@ class Audio {
 }
 
 Audio.ctx = new AudioContext();
+
+// Assuming there's a function or a way to set volume in binjgb.js or script.js
+// Initialize volume state
+let isVolumeOn = false;
+
+// Function to toggle volume state
+function toggleVolume() {
+  isVolumeOn = !isVolumeOn;
+  setGameVolume(isVolumeOn ? 1 : 0); // Placeholder function to set volume
+}
+
+// Event listener for the volume button
+document.getElementById('controller_volume').addEventListener('click', toggleVolume);
+
+// Placeholder function to demonstrate setting game volume
+// You need to replace this with actual game volume control logic
+function setGameVolume(volumeLevel) {
+  console.log(`Volume set to ${volumeLevel}`);
+  // Implement volume control here. This might involve adjusting the game's audio context or elements.
+}
 
 class Video {
   constructor(module, e, el) {
