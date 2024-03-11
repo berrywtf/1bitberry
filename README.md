@@ -1,9 +1,3 @@
-# 1BITBERRY - TEST (UNFINISHED)
-[@StrawberryWTF](https://twitter.com/strawberrywtf).
-
-Designed & Developed by me.
-Created in [GB STUDIO](https://www.gbstudio.dev/).
-
 # binjgb
 
 Fork of binji's Game Boy emulator built as a WebAssembly module.
