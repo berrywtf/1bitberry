@@ -9,7 +9,7 @@
 // User configurable.
 const ROM_FILENAME = "rom/game.gb";
 const ENABLE_REWIND = true;
-const ENABLE_PAUSE = true;
+const ENABLE_PAUSE = false;
 const ENABLE_SWITCH_PALETTES = true;
 const OSGP_DEADZONE = 0.1; // On screen gamepad deadzone range
 const CGB_COLOR_CURVE = 2; // 0: none, 1: Sameboy "Emulate Hardware" 2: Gambatte/Gameboy Online
@@ -1046,15 +1046,8 @@ class Audio {
       return;
     }
     Audio.ctx.resume();
-  };
-
-  toggleVolume() {
-    // Assuming vm.volume exists and controls the game's volume
-    // Toggle between 0 (off) and 1 (on) or any desired volume level
-    vm.volume = vm.volume === 0 ? 1 : 0;
-    console.log(`Volume toggled. New volume: ${vm.volume}`);
-};
-};
+  }
+}
 
 Audio.ctx = new AudioContext();
 
